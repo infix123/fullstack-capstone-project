@@ -4,14 +4,16 @@ const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
 const giftRoutes = require('./routes/giftRoutes');
+const searchRoutes = require('./routes/searchRoutes');
 
 const connectToDatabase = require('./models/db');
-const {loadData} = require("./util/import-mongo/index");
+const { loadData } = require("./util/import-mongo/index");
 
 
 const app = express();
-app.use("*",cors());
+app.use("*", cors());
 app.use('api/gifts', giftRoutes);
+app.use('/api/search', searchRoutes);
 const port = 3060;
 
 // Connect to MongoDB; we just do this one time
@@ -50,7 +52,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Internal Server Error');
 });
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("Inside the server")
 })
 
