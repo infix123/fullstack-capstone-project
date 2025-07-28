@@ -1,3 +1,6 @@
+const express = require('express');
+const router = express.Router(); // Define the router
+
 router.get('/', async (req, res) => {
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
