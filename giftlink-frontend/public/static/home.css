@@ -1,19 +1,73 @@
 /* Task 1: Style the body */
 body {
-    /* insert code here */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f4f4f4; /* Light gray background */
 }
 
 /* Task 2: Create a pseudo-element for the background and blur */
 body::before {
-    /* insert code here */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/path/to/your/background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Blur effect */
+    z-index: -1; /* Send behind other content */
 }
 
 /* Task 3: Style the content area */
 .content {
-    /* insert code here */
+    position: relative; /* Ensure content is positioned above the pseudo-element */
+    z-index: 1; /* Bring content in front of the background */
+    text-align: center; /* Center-align text */
+    color: #333; /* Dark text color for readability */
+    max-width: 600px; /* Maximum width for content */
+    padding: 20px; /* Padding for content area */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 10px; /* Rounded corners */
+}
 }
 
 /* Task 4: Add styles for headings, paragraphs, and buttons */
-h1, h2, .lead, .btn-primary {
-    /* insert code here */
+h1 {
+    font-size: 2.5rem; /* Larger font size for main heading */
+    font-weight: 700; /* Bold font weight */
+    color: #2c3e50; /* Darker color for headings */
+}
+
+h2 {
+    font-size: 1.5rem; /* Subheading size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #34495e; /* Slightly lighter color for subheading */
+}
+
+.lead {
+    font-size: 1.25rem; /* Font size for lead text */
+    color: #555; /* Color for the quote */
+    margin-bottom: 20px; /* Spacing below the quote */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    padding: 10px 20px; /* Button padding */
+    color: white; /* White text color */
+    font-size: 1rem; /* Font size for button */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }
